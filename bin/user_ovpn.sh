@@ -9,5 +9,6 @@ if [ -z $username ]; then
     exit 1
 fi
 
-docker-compose run --rm openvpn ovpn_getclient $username > ${username}.ovpn
+mkdir -p ovpn
+docker-compose run --rm openvpn ovpn_getclient $username > ./ovpn/${username}.ovpn
 
