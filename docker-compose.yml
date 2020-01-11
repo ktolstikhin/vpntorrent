@@ -3,15 +3,15 @@ version: "3"
 services:
   openvpn:
     image: kylemanna/openvpn
-    container_name: openvpn
+    container_name: openvpn_server
     restart: always
     ports:
      - "1194:1194/udp"
     volumes:
-     - openvpn:/etc/openvpn
+     - config:/etc/openvpn
     cap_add:
      - NET_ADMIN
 
 volumes:
-  openvpn:
+  config:
 

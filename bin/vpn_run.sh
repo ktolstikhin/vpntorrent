@@ -2,5 +2,5 @@
 
 cd $(dirname $(dirname $(realpath $0)))
 
-docker-compose up -d openvpn
+docker-compose up -d
 
