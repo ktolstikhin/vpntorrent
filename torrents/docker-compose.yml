@@ -21,10 +21,9 @@ services:
     env_file:
       - ../ovpn/secrets.env
     environment:
-      # Find user and group IDs:
-      # $ id -u username
-      # $ id -g username
+      # User ID: id -u $(whoami)
       - PUID=1000
+      # Group ID: id -g $(whoami)
       - PGID=1000
       - OPENVPN_OPTS=--inactive 3600 --ping 10 --ping-exit 60 --auth-nocache --mute-replay-warnings
       - WEBPROXY_ENABLED=true
