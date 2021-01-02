@@ -5,16 +5,16 @@ services:
     image: haugene/transmission-openvpn
     restart: always
     ports:
-     - "8080:9091"
-     - "8888:8888"
+      - "8080:9091"
+      - "8888:8888"
     dns:
-    - "8.8.8.8"
-    - "8.8.4.4"
+      - "8.8.8.8"
+      - "8.8.4.4"
     volumes:
-     - ./torrents:/data
-     - ./ovpn/auth.txt:/etc/openvpn/custom/auth.txt
-     - ./ovpn/default.ovpn:/etc/openvpn/custom/default.ovpn
-     - /etc/localtime:/etc/localtime:ro
+      - ./torrents:/data
+      - ./ovpn/auth.txt:/etc/openvpn/custom/auth.txt
+      - ./ovpn/default.ovpn:/etc/openvpn/custom/default.ovpn
+      - /etc/localtime:/etc/localtime:ro
     devices:
       - /dev/net/tun
     logging:
@@ -23,7 +23,7 @@ services:
         max-file: "5"
         max-size: "10m"
     cap_add:
-     - NET_ADMIN
+      - NET_ADMIN
     environment:
       - PUID=1000  # id -u $(whoami)
       - PGID=1000  # id -g $(whoami)

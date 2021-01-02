@@ -6,11 +6,11 @@ services:
     container_name: openvpn_server
     restart: always
     ports:
-     - "1194:1194/udp"
+      - "1194:1194/udp"
     volumes:
-     - config:/etc/openvpn
+      - config:/etc/openvpn
     cap_add:
-     - NET_ADMIN
+      - NET_ADMIN
 
 volumes:
   config:
